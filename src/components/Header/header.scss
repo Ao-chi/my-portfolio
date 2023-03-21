@@ -1,0 +1,144 @@
+@import "../../App.scss";
+
+header {
+    position: relative;
+    padding: $p-1_5 0;
+    height: 6.25rem;
+
+    &::after {
+        content: "";
+        @include pos-absolute(auto, 0, 0, 0);
+        height: 1px;
+        background: $white;
+    }
+
+    .container {
+        padding: 0 10%;
+        display: flex;
+    }
+
+    &.fixed {
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+
+        background: $black;
+        z-index: 1000;
+    }
+}
+
+.icon {
+    margin-right: auto;
+    .logo {
+        width: 40px;
+        height: 50px;
+
+        &:hover {
+            path {
+                fill: $purple;
+            }
+        }
+    }
+}
+
+.nav-container {
+    display: none;
+
+    padding-left: $p-0;
+
+    &__list {
+        padding: $p-1 $p-3;
+
+        &:last-child {
+            padding: $p-0;
+        }
+
+        &:hover {
+            a {
+                color: $purple;
+            }
+        }
+    }
+
+    &__items {
+        color: $grey;
+        @include Open-sans;
+        font-weight: font-weight(font-bold);
+    }
+}
+
+.menu-icon {
+    padding: $p-0;
+    border: none;
+
+    .icon {
+        .logo {
+            width: 50px;
+        }
+    }
+    .hamburger {
+        background: $grey;
+        width: 40px;
+        height: 2px;
+        margin-bottom: $p-0_5;
+
+        &:nth-child(2) {
+            width: 30px;
+            margin-left: auto;
+        }
+
+        &:nth-child(3) {
+            width: 25px;
+            margin-left: auto;
+            margin-bottom: $p-0;
+        }
+    }
+
+    &.active {
+        .hamburger {
+            &:nth-child(1) {
+                width: 35px;
+                transform: rotate(45deg) translate(5px, 6px);
+                margin-bottom: $p-0;
+                margin-left: 0;
+            }
+            &:nth-child(2) {
+                width: 0;
+                margin-left: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(3px, -4px);
+                width: 35px;
+                margin-left: 0;
+                margin-bottom: $p-0;
+            }
+        }
+    }
+}
+
+@include breakpoint(md, min) {
+    .menu-icon {
+        display: none;
+    }
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: $p-0;
+
+        &__list {
+            padding: $p-1 $p-3;
+            &:last-child {
+                padding: $p-0;
+            }
+        }
+
+        &__items {
+            color: $grey;
+            @include Open-sans;
+            font-weight: font-weight(font-bold);
+        }
+    }
+}

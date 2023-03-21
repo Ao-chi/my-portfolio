@@ -1,0 +1,29 @@
+@import "./assets/scss/abstracts/_reset.scss", "./assets/scss/abstracts/functions",
+    "./assets/scss/abstracts/mixins", "./assets/scss/abstracts/variables";
+@import "./assets/scss/base/base", "./assets/scss/base/fonts";
+
+main {
+    position: relative;
+    min-height: 100vh;
+    transition: none;
+
+    &::before {
+        content: "";
+        @include pos-absolute(-100px, 0, 0, 5%);
+        width: 1px;
+        background: $grey;
+        z-index: 1000;
+    }
+
+    &.fixed-top {
+        margin-top: 6.25rem;
+    }
+}
+
+section {
+    padding: 5%;
+}
+
+section:target {
+    scroll-margin-top: 100px;
+}

@@ -1,0 +1,52 @@
+//animations
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        max-width: auto;
+        transform: translateY(10%);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+.fade {
+    opacity: 0;
+}
+
+.fade-up {
+    animation: fade-up 0.3s ease-in 0.3s 1 forwards;
+}
+
+@keyframes reveal-left {
+    0% {
+        transform: translateX(120%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes reveal-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.reveal-left {
+    animation: reveal-left 0.25s ease-in 0s 1 forwards;
+}
+
+.reveal-right {
+    animation: reveal-right 0.25s ease-in 0s 1 forwards;
+}

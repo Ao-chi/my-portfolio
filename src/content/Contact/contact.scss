@@ -1,0 +1,122 @@
+@use "../../App.scss" as *;
+@use "../../assets/scss/utilities/animations";
+
+.contact {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        max-width: 44.5rem;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-right: auto;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $black;
+        transition: width ease-in-out 0.5s;
+
+        &.reveal {
+            width: 0;
+            z-index: 1;
+        }
+    }
+
+    &__title {
+        position: relative;
+        text-align: left;
+
+        h1 {
+            margin-bottom: $p-0;
+        }
+    }
+
+    &__paragraph {
+        max-width: 32.75rem;
+        text-align: left;
+
+        p {
+            &:nth-child(1) {
+                color: $purple;
+                @include Raleway;
+                font-size: fs(fs-24);
+                font-weight: font-weight(font-bold);
+                margin-bottom: $p-0_5;
+            }
+        }
+    }
+}
+
+.icons {
+    ul {
+        display: flex;
+        padding-left: $p-0;
+
+        li {
+            margin-right: $p-1;
+
+            &:hover {
+                path {
+                    fill: $purple;
+                }
+            }
+
+            svg {
+                font-size: fs(fs-24);
+            }
+        }
+    }
+}
+
+@include breakpoint(md, min) {
+    .contact {
+        &__container {
+            display: flex;
+            flex-direction: column;
+            max-width: 50rem;
+            padding-left: $p-0;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        &__title {
+            text-align: right;
+
+            h1 {
+                font-size: 11.5rem;
+            }
+        }
+
+        &__paragraph {
+            text-align: right;
+            max-width: 32.75rem;
+            margin-left: auto;
+
+            p {
+                &:nth-child(1) {
+                    font-size: fs(fs-32);
+                }
+
+                &:nth-child(2) {
+                    font-size: fs(fs-24);
+                }
+            }
+        }
+    }
+
+    .icons {
+        ul {
+            padding-top: $p-1;
+            justify-content: flex-end;
+
+            li {
+                margin-left: $p-3;
+                margin-right: $p-0;
+            }
+        }
+    }
+}

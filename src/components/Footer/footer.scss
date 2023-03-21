@@ -1,0 +1,21 @@
+@use "../../App.scss" as *;
+
+.footer {
+    position: relative;
+    padding: 5%;
+    padding-bottom: calc($p-1 + $p-1);
+
+    p {
+        font-size: fs(fs-12);
+        padding-left: 5%;
+        margin-bottom: $p-0;
+    }
+
+    &::before {
+        content: "";
+        @include pos-absolute(0, 0, 0, 5%);
+        width: 1px;
+        background: $grey;
+        z-index: 1000;
+    }
+}

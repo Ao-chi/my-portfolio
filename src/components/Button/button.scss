@@ -1,0 +1,10 @@
+@use "../../App.scss" as *;
+
+button {
+    @include Raleway;
+    font-size: fs(fs-24);
+    position: relative;
+    background: transparent;
+    padding: $p-0_5 $p-1-5;
+    cursor: pointer;
+}

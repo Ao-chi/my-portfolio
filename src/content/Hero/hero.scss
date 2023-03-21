@@ -1,0 +1,49 @@
+@use "../../App.scss" as *;
+// @import "../../assets/scss/utilities/animations";
+@use "../../assets/scss/utilities/animations";
+
+.hero {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+
+    &__heading {
+        padding-left: 5%;
+        max-width: calc(550px + 5%);
+        h1 {
+            font-size: 40px;
+            font-weight: font-weight(font-bolder);
+            &:hover {
+                color: $purple;
+            }
+        }
+
+        .hero-text {
+            font-size: fs(fs-16);
+            max-width: 450px;
+        }
+    }
+}
+
+@include breakpoint(md, min) {
+    .hero {
+        align-items: flex-start;
+
+        &__heading {
+            padding-left: 5%;
+            max-width: calc(850px + 5%);
+            h1 {
+                font-size: 120px;
+                font-weight: font-weight(font-bolder);
+                &:hover {
+                    color: $purple;
+                }
+            }
+
+            .hero-text {
+                font-size: fs(fs-24);
+                max-width: 450px;
+            }
+        }
+    }
+}

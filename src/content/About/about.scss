@@ -1,0 +1,112 @@
+@use "../../App.scss" as *;
+@use "../../assets/scss/utilities/animations";
+
+.about {
+    @include display-flex(center, center);
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding-left: 5%;
+    }
+
+    &__text {
+        padding: $p-0;
+        padding-top: $p-0_5;
+        max-width: 100%;
+        background: $black;
+        transform: translateX(-100%);
+        opacity: 0;
+
+        h2 {
+            color: $purple;
+            font-size: fs(fs-24);
+            font-weight: font-weight(font-bold);
+        }
+
+        p {
+            font-size: fs(fs-16);
+            line-height: 1.5;
+        }
+    }
+}
+
+.about-me {
+    position: relative;
+    padding: $p-1_5 $p-0;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 5.3125rem;
+        height: 1px;
+        background: $grey;
+    }
+
+    &__span {
+        color: $grey;
+        font-size: 2.4375rem;
+        font-weight: font-weight(font-bolder);
+        @include Raleway;
+        display: block;
+        line-height: 1.5rem;
+        transform: translateX(120%);
+        position: relative;
+        z-index: 0;
+        opacity: 0;
+    }
+}
+
+@include breakpoint(md, min) {
+    .about {
+        &__content {
+            flex-direction: row;
+        }
+
+        &__text {
+            padding: $p-1_5 $p-3;
+            padding-top: $p-0_5;
+            max-width: 650px;
+            background: $black;
+            transform: translateX(-100%);
+            opacity: 0;
+
+            h2 {
+                color: $purple;
+                font-size: 3rem;
+
+                font-weight: font-weight(font-bold);
+            }
+
+            p {
+                font-size: fs(fs-20);
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .about-me {
+        position: relative;
+        padding: $p-1_5 $p-3;
+
+        &::after {
+            top: 0;
+            right: 0;
+            left: auto;
+            width: 0.0625rem;
+            height: 100%;
+            background: $grey;
+        }
+
+        &__span {
+            font-size: 11.5rem;
+            @include Raleway;
+            line-height: 7.5rem;
+            transform: translateX(120%);
+        }
+    }
+}
