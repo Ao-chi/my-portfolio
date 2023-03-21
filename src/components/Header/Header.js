@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import "./header.scss";
 
-const Header = ({ className = "" }) => {
+const Header = ({ className = "fixed" }) => {
     const [isActive, setIsActive] = useState(false);
 
     const handleClick = () => {

@@ -11,7 +11,7 @@ section:target {
 
 body {
     height: 100%;
-    // overflow-x: hidden;
+    overflow-x: clip;
     @include Lato;
     background: $black;
     position: relative;

@@ -6,48 +6,46 @@ import ProjectsSection from "../../content/Projects/ProjectsSection";
 import Contact from "../../content/Contact/Contact";
 
 const Home = () => {
-    const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+    // const [isNavbarFixed, setIsNavbarFixed] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            console.log(scrollPosition);
-            if (scrollPosition > 0) {
-                setIsNavbarFixed(true);
-            } else {
-                setIsNavbarFixed(false);
-            }
-        };
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const scrollPosition = window.scrollY;
+    //         console.log(scrollPosition);
+    //         if (scrollPosition > 0) {
+    //             setIsNavbarFixed(true);
+    //         } else {
+    //             setIsNavbarFixed(false);
+    //         }
+    //     };
 
-        const throttledHandleScroll = throttle(handleScroll, 0);
+    //     const throttledHandleScroll = throttle(handleScroll, 0);
 
-        window.addEventListener("scroll", throttledHandleScroll);
+    //     window.addEventListener("scroll", throttledHandleScroll);
 
-        return () => {
-            window.removeEventListener("scroll", throttledHandleScroll);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener("scroll", throttledHandleScroll);
+    //     };
+    // }, []);
 
-    const throttle = (callback, delay) => {
-        let timeoutId = null;
-        return (...args) => {
-            if (timeoutId === null) {
-                timeoutId = setTimeout(() => {
-                    callback.apply(this, args);
-                    timeoutId = null;
-                }, delay);
-            }
-        };
-    };
+    // const throttle = (callback, delay) => {
+    //     let timeoutId = null;
+    //     return (...args) => {
+    //         if (timeoutId === null) {
+    //             timeoutId = setTimeout(() => {
+    //                 callback.apply(this, args);
+    //                 timeoutId = null;
+    //             }, delay);
+    //         }
+    //     };
+    // };
     return (
-        // <main className={`${isNavbarFixed ? "fixed-top" : ""}`}>
-        <>
+        <main className="fixed-top">
             <Hero />
             <About />
             <ProjectsSection />
             <Contact />
-        </>
-        // </main>
+        </main>
     );
 };
 
