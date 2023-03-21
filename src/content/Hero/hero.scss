@@ -1,6 +1,9 @@
-@use "../../App.scss" as *;
-// @import "../../assets/scss/utilities/animations";
-@use "../../assets/scss/utilities/animations";
+// @use "../../App.scss" as *;
+@import "../../assets/scss/utilities/animations";
+// @use "../../assets/scss/utilities/animations";
+@import "../../assets/scss/abstracts/functions", "../../assets/scss/abstracts/mixins",
+    "../../assets/scss/abstracts/variables";
+@import "../../assets/scss/base/fonts";
 
 .hero {
     min-height: calc(100vh - 100px);

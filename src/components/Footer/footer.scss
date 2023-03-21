@@ -1,4 +1,6 @@
-@use "../../App.scss" as *;
+// @use "../../App.scss" as *;
+@import "../../assets/scss/abstracts/functions", "../../assets/scss/abstracts/mixins",
+    "../../assets/scss/abstracts/variables";
 
 .footer {
     position: relative;
@@ -6,7 +8,8 @@
     padding-bottom: calc($p-1 + $p-1);
 
     p {
-        font-size: fs(fs-12);
+        color: $grey;
+        font-size: 10px;
         padding-left: 5%;
         margin-bottom: $p-0;
     }

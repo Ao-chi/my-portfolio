@@ -1,4 +1,6 @@
-@use "../../App.scss" as *;
+// @use "../../App.scss" as *;
+@import "../../assets/scss/abstracts/functions", "../../assets/scss/abstracts/mixins",
+    "../../assets/scss/abstracts/variables";
 
 .card {
     position: relative;

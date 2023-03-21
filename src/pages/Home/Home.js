@@ -40,12 +40,12 @@ const Home = () => {
     //     };
     // };
     return (
-        <main className="fixed-top">
+        <>
             <Hero />
             <About />
             <ProjectsSection />
             <Contact />
-        </main>
+        </>
     );
 };
 

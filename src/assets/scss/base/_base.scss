@@ -1,3 +1,6 @@
+:root {
+    $background-color-light: $white;
+}
 html {
     height: 100%;
     box-sizing: border-box;
@@ -10,11 +13,51 @@ section:target {
 }
 
 body {
-    height: 100%;
-    overflow-x: clip;
+    min-height: 100%;
+    overflow-x: hidden;
     @include Lato;
-    background: $black;
+    background: $background-color-dark;
     position: relative;
+
+    &.light-mode {
+        background: $background-color-light !important;
+        color: $black !important;
+
+        h1,
+        li,
+        p,
+        a,
+        span,
+        svg,
+        path {
+            color: $black;
+            fill: $black;
+        }
+
+        .card {
+            border: 1px solid $black;
+        }
+
+        .hamburger {
+            background: $background-color-dark;
+        }
+
+        .nav,
+        .fixed,
+        .about__text,
+        .project-sect__overlay,
+        .contact__overlay {
+            background: $background-color-light !important;
+
+            &.active {
+                background: $background-color-light !important;
+            }
+        }
+    }
+}
+
+[data-theme="dark"] {
+    $background-color-dark: $black;
 }
 
 *,

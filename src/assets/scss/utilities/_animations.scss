@@ -50,3 +50,34 @@
 .reveal-right {
     animation: reveal-right 0.25s ease-in 0s 1 forwards;
 }
+
+@keyframes exit-nav {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+.exit-nav {
+    animation: exit-nav 0.5s ease-out 0s 1 forwards;
+}
+
+@keyframes fixed-top {
+    0% {
+        opacity: 0;
+        max-width: auto;
+        transform: translateY(-5%);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+.fixed {
+    animation: fixed-top 0.5s ease-in-out 0s 1 forwards;
+}

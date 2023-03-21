@@ -1,5 +1,8 @@
-@use "../../App.scss" as *;
-@use "../../assets/scss/utilities/animations";
+// @use "../../App.scss" as *;
+// @use "../../assets/scss/utilities/animations";
+@import "../../assets/scss/abstracts/functions", "../../assets/scss/abstracts/mixins",
+    "../../assets/scss/abstracts/variables";
+@import "../../assets/scss/utilities/animations";
 
 .project-sect {
     display: flex;
@@ -8,6 +11,7 @@
 
     &__content {
         padding: $p-0 5%;
+        padding-right: $p-0;
     }
 
     &__heading {
@@ -40,7 +44,7 @@
 .projects {
     &__container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 3.75rem;
     }
 }
@@ -49,6 +53,7 @@
     .project-sect {
         justify-content: center;
         align-items: center;
+        padding-right: 5%;
 
         &__title {
             font-size: 11.5rem;

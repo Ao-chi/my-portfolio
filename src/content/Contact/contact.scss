@@ -1,7 +1,12 @@
-@use "../../App.scss" as *;
-@use "../../assets/scss/utilities/animations";
+// @use "../../App.scss" as *;
+@import "../../assets/scss/abstracts/functions", "../../assets/scss/abstracts/mixins",
+    "../../assets/scss/abstracts/variables";
+@import "../../assets/scss/base/fonts";
+@import "../../assets/scss/utilities/animations";
 
 .contact {
+    padding-top: $p-3;
+
     &__container {
         display: flex;
         flex-direction: column;
@@ -17,7 +22,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: $black;
+        background: $background-color-dark;
         transition: width ease-in-out 0.5s;
 
         &.reveal {
@@ -43,15 +48,19 @@
             &:nth-child(1) {
                 color: $purple;
                 @include Raleway;
-                font-size: fs(fs-24);
+                font-size: fs(fs-20);
                 font-weight: font-weight(font-bold);
+                line-height: 1.1;
                 margin-bottom: $p-0_5;
+                // max-width: 60%;
             }
         }
     }
 }
 
 .icons {
+    padding-top: $p-1_5;
+
     ul {
         display: flex;
         padding-left: $p-0;
@@ -74,6 +83,8 @@
 
 @include breakpoint(md, min) {
     .contact {
+        padding-top: 5%;
+
         &__container {
             display: flex;
             flex-direction: column;
@@ -99,6 +110,7 @@
             p {
                 &:nth-child(1) {
                     font-size: fs(fs-32);
+                    max-width: 100%;
                 }
 
                 &:nth-child(2) {
@@ -109,6 +121,8 @@
     }
 
     .icons {
+        padding-top: $p-0;
+
         ul {
             padding-top: $p-1;
             justify-content: flex-end;

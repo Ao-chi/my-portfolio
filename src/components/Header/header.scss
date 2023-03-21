@@ -1,35 +1,40 @@
-@import "../../App.scss";
+// @import "../../App.scss";
+@import "../../assets/scss/abstracts/functions", "../../assets/scss/abstracts/mixins",
+    "../../assets/scss/abstracts/variables";
+@import "../../assets/scss/base/base", "../../assets/scss/base/fonts";
 
 header {
-    position: relative;
+    // position: relative;
+    position: inherit;
     padding: $p-1_5 0;
     width: 100%;
     height: 6.25rem;
+    z-index: 1000;
 
     &::after {
         content: "";
         @include pos-absolute(auto, 0, 0, 0);
         height: 1px;
-        background: $white;
+        background: $grey;
     }
 
     .container {
         padding: 0 10%;
+        padding-right: 5%;
         display: flex;
     }
 
     &.fixed {
         position: fixed;
         top: 0;
-        background: $black;
-        z-index: 1000;
+        background: $background-color-dark;
     }
 }
 
 .icon {
     margin-right: auto;
     .logo {
-        width: 40px;
+        width: 35px;
         height: 50px;
 
         &:hover {
@@ -40,10 +45,29 @@ header {
     }
 }
 
+.nav {
+    position: fixed;
+    width: 0;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: $background-color-dark;
+    transition: all ease-in-out 0.3s;
+
+    &.active {
+        width: min(75vw, 400px);
+        z-index: 1002;
+        box-shadow: -7px 0px 15px 0px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: -7px 0px 15px 0px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: -7px 0px 15px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
 .nav-container {
     display: none;
-
     padding-left: $p-0;
+    height: inherit;
 
     &__list {
         padding: $p-1 $p-3;
@@ -64,11 +88,19 @@ header {
         @include Open-sans;
         font-weight: font-weight(font-bold);
     }
+
+    &.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .menu-icon {
     padding: $p-0;
     border: none;
+    z-index: 1004;
 
     .icon {
         .logo {
@@ -77,17 +109,17 @@ header {
     }
     .hamburger {
         background: $grey;
-        width: 40px;
+        width: 35px;
         height: 2px;
         margin-bottom: $p-0_5;
 
         &:nth-child(2) {
-            width: 30px;
+            width: 25px;
             margin-left: auto;
         }
 
         &:nth-child(3) {
-            width: 25px;
+            width: 15px;
             margin-left: auto;
             margin-bottom: $p-0;
         }
@@ -96,7 +128,7 @@ header {
     &.active {
         .hamburger {
             &:nth-child(1) {
-                width: 35px;
+                width: 25px;
                 transform: rotate(45deg) translate(5px, 6px);
                 margin-bottom: $p-0;
                 margin-left: 0;
@@ -107,8 +139,8 @@ header {
             }
 
             &:nth-child(3) {
-                transform: rotate(-45deg) translate(3px, -4px);
-                width: 35px;
+                transform: rotate(-45deg) translate(2px, -4px);
+                width: 25px;
                 margin-left: 0;
                 margin-bottom: $p-0;
             }
@@ -116,10 +148,50 @@ header {
     }
 }
 
+.theme-btn {
+    border: none;
+
+    svg {
+        path {
+            color: $grey;
+        }
+    }
+}
+
 @include breakpoint(md, min) {
+    header {
+        .container {
+            padding-right: 10%;
+        }
+    }
+
+    .icon {
+        .logo {
+            width: 40px;
+        }
+    }
+
     .menu-icon {
         display: none;
     }
+
+    .nav {
+        position: relative;
+        width: auto;
+        height: 100%;
+
+        &.active {
+            width: min(75vw, 400px);
+            background: $background-color-dark;
+            z-index: 1002;
+            box-shadow: none;
+        }
+
+        &.exit-nav {
+            animation: none;
+        }
+    }
+
     .nav-container {
         display: flex;
         flex-direction: row;
@@ -137,6 +209,13 @@ header {
             color: $grey;
             @include Open-sans;
             font-weight: font-weight(font-bold);
+        }
+
+        &.active {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
