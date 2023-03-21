@@ -1,19 +1,19 @@
 [
     {
         "id": 1,
-        "image": "loopstudios.png",
+        "image": "loopstudios-min.png",
         "description": "A responsive landing page made with HTML, CSS/SCSS, Javascript",
         "link": "https://loopstudios-landingpage1.netlify.app"
     },
     {
         "id": 2,
-        "image": "sunnyside.png",
+        "image": "sunnyside-min.png",
         "description": "A responsive landing page made with React and SCSS",
         "link": "https://sunnyside-agency-12.netlify.app"
     },
     {
         "id": 3,
-        "image": "animeonline.vercel.app_.png",
+        "image": "animeonline.vercel.app_-min.png",
         "description": "An anime streaming website made with React, SCSS",
         "link": "https://animeonline.vercel.app/"
     }
