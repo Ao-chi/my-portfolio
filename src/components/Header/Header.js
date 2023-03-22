@@ -15,14 +15,21 @@ const Header = ({ className = "fixed" }) => {
         e.preventDefault();
         setIsActive(!isActive);
         setIsNavActive(!isNavActive);
-        // console.log(isActive);
     };
 
+    // const handleTheme = () => {
+    //     setIsDarkTheme(!isDarkTheme);
+    //     const selectedTheme = isDarkTheme ? "dark-mode" : "light-mode";
+    //     document.body.classList.toggle("light-mode", !isDarkTheme);
+    //     document.body.classList.toggle("dark-mode", isDarkTheme);
+    //     localStorage.setItem("selectedTheme", selectedTheme);
+    // };
     const handleTheme = () => {
-        setIsDarkTheme(!isDarkTheme);
-        const selectedTheme = isDarkTheme ? "dark-mode" : "light-mode";
-        document.body.classList.toggle("light-mode", !isDarkTheme);
-        document.body.classList.toggle("dark-mode", isDarkTheme);
+        const updatedIsDarkTheme = !isDarkTheme;
+        setIsDarkTheme(updatedIsDarkTheme);
+        const selectedTheme = updatedIsDarkTheme ? "dark-mode" : "light-mode";
+        document.body.classList.toggle("light-mode", !updatedIsDarkTheme);
+        document.body.classList.toggle("dark-mode", updatedIsDarkTheme);
         localStorage.setItem("selectedTheme", selectedTheme);
     };
 
@@ -36,6 +43,7 @@ const Header = ({ className = "fixed" }) => {
             document.body.classList.add("dark-mode");
         }
     }, []);
+  
 
     useEffect(() => {
         const body = document.querySelector("body");
