@@ -12,6 +12,14 @@
         font-size: 10px;
         padding-left: 5%;
         margin-bottom: $p-0;
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                color: $purple;
+            }
+        }
     }
 
     &::before {

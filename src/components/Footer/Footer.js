@@ -9,7 +9,10 @@ const Footer = () => {
         <footer className="footer">
             <p>Designed and Built</p>
             <p>
-                by <a href="/">Josh Zulueta</a>
+                by{" "}
+                <a href="https://github.com/Ao-chi/my-portfolio" target="_blank">
+                    Josh Zulueta
+                </a>
             </p>
         </footer>
     );

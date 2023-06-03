@@ -17,12 +17,25 @@
     }
 
     &__image {
+        position: relative;
         overflow: hidden;
         max-height: 406px;
 
         .img {
             width: 100%;
             object-fit: cover;
+        }
+
+        &::before {
+            content: "";
+            @include pos-absolute(0, 0, 0, 0);
+            background: rgb(34, 34, 34);
+            background: rgb(34, 34, 34);
+            background: linear-gradient(
+                0deg,
+                rgba(34, 34, 34, 0.6019199916294643) 0%,
+                rgba(34, 34, 34, 0) 58%
+            );
         }
     }
 

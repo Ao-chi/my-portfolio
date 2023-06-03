@@ -16,14 +16,7 @@ const Header = ({ className = "fixed" }) => {
         setIsActive(!isActive);
         setIsNavActive(!isNavActive);
     };
-
-    // const handleTheme = () => {
-    //     setIsDarkTheme(!isDarkTheme);
-    //     const selectedTheme = isDarkTheme ? "dark-mode" : "light-mode";
-    //     document.body.classList.toggle("light-mode", !isDarkTheme);
-    //     document.body.classList.toggle("dark-mode", isDarkTheme);
-    //     localStorage.setItem("selectedTheme", selectedTheme);
-    // };
+    
     const handleTheme = () => {
         const updatedIsDarkTheme = !isDarkTheme;
         setIsDarkTheme(updatedIsDarkTheme);
@@ -43,7 +36,6 @@ const Header = ({ className = "fixed" }) => {
             document.body.classList.add("dark-mode");
         }
     }, []);
-  
 
     useEffect(() => {
         const body = document.querySelector("body");

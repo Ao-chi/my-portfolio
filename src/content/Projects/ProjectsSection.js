@@ -52,7 +52,7 @@ const ProjectsSection = () => {
                                         target="_blank"
                                         key={i}
                                         className={`fade ${isReveal ? "fade-up" : ""}`}
-                                    >
+                                    >   
                                         <Card proj={{ id, image, description }} />
                                     </a>
                                 );
